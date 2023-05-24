@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Калькулятор импорта</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+  <div class="navbar">
+    <h1 style="text-align: center;">Калькулятор импорта</h1>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <form id="importForm">
+        <div class="form-group">
+          <label for="country">Страна-контрагент:</label>
+          <select id="country">
+            <option value="country1">Америка</option>
+            <option value="country2">Польша</option>
+            <option value="country3">Венгрия</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="productType">Тип товара:</label>
+          <select id="productType">
+            <option value="type1" data-price="10">Ручки - 10 ₽</option>
+            <option value="type2" data-price="5">Карандаши - 5 ₽</option>
+            <option value="type3" data-price="15">Тёрки - 15 ₽</option>
+            <option value="type4" data-price="13">Линейки - 13 ₽</option>
+            <option value="type5" data-price="1000">Парты - 1000 ₽</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">Количество:</label>
+          <input type="number" id="quantity">
+          <div id="quantityError" class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="vatRate">Ставка НДС (от стоимости товара, %):</label>
+          <input type="number" id="vatRate" min="0" max="100">
+          <div id="vatRateError" class="error-message"></div>
+        </div>
+
+        <button type="submit">Рассчитать</button>
+        <button type="button" onclick="clearForm()">Очистить</button>
+      </form>
+
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
